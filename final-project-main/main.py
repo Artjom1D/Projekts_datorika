@@ -1,7 +1,7 @@
 from flask import Flask, render_template,request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import bcrypt
-import os
+# Importē nepieciešamās bibliotēkas ar funkciju pip install un bibliotēkas nosaukumu: flask flask_sqlalchemy bcrypt
 
 
 # Funkcija, lai hashotu paroli un atgrieztu to kā virkni
@@ -54,7 +54,6 @@ class User(db.Model):
 @app.route('/', methods=['GET','POST'])
 def login():
         error = ''
-        print(os.listdir('templates')) 
         if request.method == 'POST':
             form_login = request.form['email']
             form_password = request.form['password']
